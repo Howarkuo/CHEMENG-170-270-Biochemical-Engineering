@@ -1,6 +1,7 @@
 # CHEMENG-170-270-Biochemical-Engineering
 
 ## Gas–Liquid Mass Transfer in a Bioreactor — Question 5
+<img width="731" height="600" alt="Screenshot 2026-11-05 at 12 20 49 AM" src="https://github.com/user-attachments/assets/f94d9a04-e492-4185-a7bc-8e9a0b87727b" />
 
 
 > **CBE 170A/270A study notes** | Physical classification, oxygen mass balances, and plug-flow gas derivation

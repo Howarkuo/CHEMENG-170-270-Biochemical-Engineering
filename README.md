@@ -204,21 +204,18 @@ With $y(0)=y_{\text{in}}$ and $y(Z)=y_{\text{out}}$:
 
 $$
 \int_{y_{\text{in}}}^{y_{\text{out}}}\frac{dy}{y-y^*}
-=-\lambda\int_0^Z dz.
-$$
+=-\lambda\int_0^Z dz.$$
 
 Therefore,
 
-$$
-\ln\!\left(\frac{y_{\text{out}}-y^*}{y_{\text{in}}-y^*}\right)
-=-\lambda Z
-$$
+$$ \ln\!\left(\frac{y_{\text{out}}-y^ast}{y_{\text{in}}-y^ast}\right) = -\lambda Z$$
+
 
 or
 
 $$
 \boxed{
-\ln\!\left(\frac{y_{\text{in}}-y^*}{y_{\text{out}}-y^*}\right)
+\ln\!\left(\frac{y_{\text{in}}-y^ast}{y_{\text{out}}-y^ast}\right)
 =\frac{K_gaV_LRTZ}{u_sV_g}
 }
 $$
@@ -241,7 +238,7 @@ This step uses the **specific normalization in the equation supplied by Question
 Solving the ODE with $y(0)=y_{\text{in}}$ gives
 
 $$
-\boxed{y(z)=y^*+(y_{\text{in}}-y^*)e^{-\lambda z}}.
+\boxed{y(z)=y^ast+(y_{\text{in}}-y^ast)e^{-\lambda z}}.
 $$
 
 The profile is exponential because oxygen flux becomes weaker as the gas approaches equilibrium with the liquid.
@@ -315,7 +312,7 @@ Let $n=\lambda Z$. Integration gives
 
 $$
 \boxed{
-\bar y=y^*+(y_{\text{in}}-y^*)\frac{1-e^{-n}}{n}
+\bar y=y^ast+(y_{\text{in}}-y^ast)\frac{1-e^{-n}}{n}
 }
 $$
 
@@ -353,7 +350,7 @@ Integrate between reactor bottom and top:
 $$
 \boxed{
 K_ga=\frac{u_sV_g}{V_LRTZ}
-\ln\left(\frac{y_{\text{in}}-y^*}{y_{\text{out}}-y^*}\right),
+\ln\left(\frac{y_{\text{in}}-y^ast}{y_{\text{out}}-y^ast}\right),
 \qquad y^*=\frac{HC_{\text{O}_2}}{P}
 }
 $$

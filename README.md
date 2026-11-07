@@ -1,4 +1,10 @@
 # CHEMENG-170-270-Biochemical-Engineering
+## Textbook
+- Bailey, J. E., & Ollis, D. F. (1986). Biochemical engineering fundamentals (2nd ed.). McGraw-Hill.
+- Blanch, H. W., & Clark, D. S. (1996). Biochemical engineering. Marcel Dekker.
+- Chaudhry, M. A. (2024, October 15). Lessons in bioreactor scale-up, Part 4: Physiochemical factors affecting oxygen transfer and the volumetric mass-transfer coefficient in stirred tanks. BioProcess International, 22(10).
+- Shuler, M. L., Kargi, F., & DeLisa, M. P. (2017). Bioprocess engineering: Basic concepts (3rd ed.). Prentice Hall.
+
 ## Lec9. Mass Balances for Two-Phase Bioreactors
 - Resistance gas mass transfer, well mixed liquid, well-mixed gas / plug flow gas
 ## Lec10. Gas-Liquid Mass Transfer and kLa

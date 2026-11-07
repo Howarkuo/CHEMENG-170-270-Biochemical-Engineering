@@ -12,8 +12,13 @@
 ### 9.2  Oxygen transport from bubbles to intracellular reaction sites
 ## Lec10. Gas-Liquid Mass Transfer and kLa
 - Experimental determination of kLa
-
-
+- probe response time and gas-phase dynamics
+- Off-gas mass-balance method
+- Maximum sustainable biomass and critical Disolved oxygen
+-  Circulation-time oxygen limitation
+-  Alternative k_La measurement methods
+[Lessons in Bioreactor Scale-Up, Part 3-by Muhammad Arshad Chaudhry (September 9, 2024)
+](https://www.bioprocessintl.com/bioreactors/lessons-in-bioreactor-scale-up-part-3-experimental-determination-and-application-of-oxygen-mass-transfer-rate-mass-transfer-coefficient-and-oxygen-uptake-rate)
 # Connecting CFD, Oxygen Transport Resistances, and Bioreactor Mass Balances
 
 The 2 lectures describe oxygen transport at different scales.

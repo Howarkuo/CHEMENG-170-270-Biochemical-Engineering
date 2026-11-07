@@ -7,8 +7,348 @@
 
 ## Lec9. Mass Balances for Two-Phase Bioreactors
 - Resistance gas mass transfer, well mixed liquid, well-mixed gas / plug flow gas
+### 9.1 CFD applications to bioreactor processes
+
+### 9.2  Oxygen transport from bubbles to intracellular reaction sites
 ## Lec10. Gas-Liquid Mass Transfer and kLa
 - Experimental determination of kLa
+
+
+# Connecting CFD, Oxygen Transport Resistances, and Bioreactor Mass Balances
+
+The 2 lectures describe oxygen transport at different scales.
+
+1. CFD: How fluid motion and mixing distribute oxygen throughout an industrial bioreactor.
+2. Mass-transfer resistances: How oxygen travels from a gas bubble to a microorganism.
+3. Rate limitation: Which transport step controls the amount of oxygen available for cellular metabolism.
+
+
+$$
+\boxed{ \text{Fluid flow} \longrightarrow \text{Mass-transfer coefficients} \longrightarrow OTR \longrightarrow \text{Cellular oxygen availability} }
+$$
+
+## 1.  CFD applications to bioreactor processes
+
+
+Compares liquid-phase velocity distributions in 40, 60, and 90 m³ bioreactors.
+
+The colors indicate local velocity magnitude, from approximately 0 to 5 m/s. Red regions near impellers have relatively high velocities, whereas blue regions have low velocities.
+
+### A. Governing equations for CFD
+
+Computational fluid dynamics solves conservation equations describing fluid motion.
+
+Continuity equation (incompressible liquid)
+
+$$
+\boxed{\nabla\cdot\mathbf{u}=0}
+$$
+
+Momentum balance (Navier–Stokes)
+
+$$
+\boxed{ \rho\left( \frac{\partial\mathbf{u}}{\partial t} +\mathbf{u}\cdot\nabla\mathbf{u} \right) = -\nabla P+\mu\nabla^2\mathbf{u} +\rho\mathbf{g}+\mathbf{f} }
+$$
+
+where $\mathbf{f}$ represents additional modeled forces, such as impeller or interphase forces.
+
+| Symbol           | Physical meaning           | Unit  |
+| ---------------- | -------------------------- | ----- |
+| $\mathbf{u}$ | Liquid velocity vector     | m/s   |
+| $\rho$       | Liquid density             | kg/m³ |
+| $P$          | Pressure                   | Pa    |
+| $\mu$        | Dynamic viscosity          | Pa·s  |
+| $\mathbf{g}$ | Gravitational acceleration | m/s²  |
+
+
+### B. How does velocity influence mass transfer?
+
+For oxygen transported through liquid, the local species balance can be expressed as:
+
+$$
+\boxed{ \frac{\partial C}{\partial t} +\mathbf{u}\cdot\nabla C = \nabla\cdot(D_{\mathrm{eff}}\nabla C) +S_{O_2} }
+$$
+
+where:
+
+$$
+S_{O_2}=OTR-OUR
+$$
+
+This equation connects fluid motion to oxygen distribution.
+
+- $\mathbf{u}\cdot\nabla C$: oxygen transported by bulk liquid movement (advection).
+- $\nabla\cdot(D_{\mathrm{eff}}\nabla C)$: oxygen redistributed by molecular and modeled turbulent diffusion.
+- $OTR$: oxygen entering the liquid from gas bubbles.
+- $OUR$: oxygen consumed by microorganisms.
+
+This is a more spatially resolved form of the familiar well-mixed oxygen balance:
+
+$$
+\boxed{\frac{dC}{dt}=OTR-OUR}
+$$
+
+In the well-mixed model, concentration gradients are neglected. In CFD, they can be explicitly calculated.
+
+### C. Why does this matter during scale-up?
+
+The 40, 60, and 90 m³ reactors show different flow patterns, despite broadly similar impeller arrangements.
+
+Consequently, scaling up a bioreactor does not automatically preserve:
+
+- Mixing time
+- Local oxygen concentration
+- Shear stress
+- Gas–liquid mass-transfer performance
+
+CFD helps identify whether parts of the vessel may have insufficient mixing or oxygen supply.
+
+## 2. s 2–3 — Oxygen transport from bubbles to intracellular reaction sites
+
+The lecture diagrams trace oxygen transport through nine numbered regions (0–8).
+
+### A. Classify the resistances
+
+| Region | Physical location                | Resistance indicated on      |
+| ------ | -------------------------------- | --------------------------------- |
+| 0      | Bulk gas                         | Low                               |
+| 1      | Gas film inside bubble           | Low                               |
+| 2      | Gas–liquid interface             | Low; local equilibrium assumed    |
+| 3      | Liquid film around bubble        | High                              |
+| 4      | Bulk liquid                      | Low; well mixed                   |
+| 5      | Liquid film around microorganism | High                              |
+| 6      | Liquid–cell interface            | Low; local equilibrium assumed    |
+| 7      | Inside cell or solid             | High                              |
+| 8      | Intracellular reaction site      | Reaction kinetics may be limiting |
+
+The s particularly emphasize regions 3, 5, and 7, plus the oxygen-consuming reaction at region 8.
+
+## 3. Region 3 — Gas–liquid film resistance
+
+This is the resistance already described by the two-film model.
+
+Gas-film flux:
+
+$$
+N_{O_2}=k_g(P_g-P_i)
+$$
+
+Liquid-film flux:
+
+$$
+N_{O_2}=k_L(C_i-C_L)
+$$
+
+Interfacial equilibrium:
+
+$$
+P_i=HC_i
+$$
+
+Combining the two resistances:
+
+$$
+\boxed{ \frac{1}{K_ga} = \frac{1}{k_ga} + \frac{H}{k_La} }
+$$
+
+The lecture assumes negligible gas-film resistance for oxygen.
+
+Therefore:
+
+$$
+\frac{1}{K_ga}\approx\frac{H}{k_La}
+$$
+
+and:
+
+$$
+\boxed{OTR\approx k_La(C^*-C_L)}
+$$
+
+where:
+
+$$
+C^*=\frac{P_{O_2}}H
+$$
+
+### How does CFD connect to $k_La$?
+
+Recall:
+
+$$
+\boxed{k_La=k_L\cdot a}
+$$
+
+where:
+
+- $k_L$ is the liquid-film mass-transfer coefficient, m/s.
+- $a$ is specific gas–liquid interfacial area, m²/m³.
+- $k_La$ has units of s⁻¹.
+
+Fluid motion can affect both.
+
+Effect on $k_L$: Greater liquid-side mixing can increase transport near bubble surfaces and reduce the effective diffusion boundary-layer resistance.
+
+A simplified film approximation is:
+
+$$
+\boxed{k_L\sim\frac{D_{O_2}}{\delta}}
+$$
+
+where $\delta$ is an effective diffusion-film thickness.
+
+Effect on $a$: Bubble breakup and gas dispersion change the total interfacial area.
+
+For approximately spherical bubbles of uniform diameter:
+
+$$
+\boxed{a=\frac{6\varepsilon_g}{d_b(1-\varepsilon_g)}}
+$$
+
+when $a$ is based on liquid volume, and $\varepsilon_g$ is gas holdup.
+
+Thus, changes in flow pattern can change bubble size, gas holdup, and ultimately oxygen transfer.
+
+Note that the CFD images display liquid velocity only. They do not directly show $k_La$, gas holdup, or oxygen concentration.
+
+## 4. Region 5 — Liquid film around microorganisms
+
+After oxygen reaches the bulk liquid, it must move toward the microorganisms.
+
+For a simplified cell-surface mass-transfer model:
+
+$$
+\boxed{N_{O_2,\mathrm{cell}}=k_{L,\mathrm{cell}}(C_L-C_s)}
+$$
+
+where:
+
+- $C_L$: dissolved oxygen concentration in bulk liquid.
+- $C_s$: oxygen concentration at the cell surface.
+- $k_{L,\mathrm{cell}}$: liquid-side transfer coefficient surrounding the cell.
+
+The total oxygen transport into cells per liquid volume is approximately:
+
+$$
+\boxed{ r_{\mathrm{cell,transfer}} = k_{L,\mathrm{cell}}a_{\mathrm{cell}}(C_L-C_s) }
+$$
+
+Here $a_{\mathrm{cell}}$ is the total exposed cell-surface area per unit liquid volume.
+
+Physical interpretation: Even if $k_La$ is high at the gas bubbles, cell uptake can still be limited if oxygen cannot reach the cell surface fast enough.
+
+The lecture notes that for individual bacteria or yeast cells, the bubble-side liquid film (region 3) is often the greater resistance.
+
+For large cell aggregates, region 5 can become important because oxygen must diffuse through the fluid layer surrounding the aggregate.
+
+## 5. Region 7 — Intracellular diffusion resistance
+
+Oxygen must also move through the cell or microbial aggregate to reach the site of oxygen consumption.
+
+A simplified diffusion model is Fick's law:
+
+$$
+\boxed{\mathbf{J}_{O_2}=-D_{\mathrm{eff}}\nabla C}
+$$
+
+where:
+
+- $\mathbf{J}_{O_2}$: diffusive oxygen flux, mol/(m²·s).
+- $D_{\mathrm{eff}}$: effective oxygen diffusivity, m²/s.
+- $\nabla C$: oxygen concentration gradient, mol/m⁴.
+
+For a reaction–diffusion system, the governing equation is:
+
+$$
+\boxed{ \frac{\partial C}{\partial t} = \nabla\cdot(D_{\mathrm{eff}}\nabla C) -r_{O_2} }
+$$
+
+where $r_{O_2}$ is the local oxygen consumption rate per volume.
+
+At steady state:
+
+$$
+\boxed{ \nabla\cdot(D_{\mathrm{eff}}\nabla C)=r_{O_2} }
+$$
+
+This equation becomes particularly useful for microbial pellets or cell aggregates because oxygen concentration may decrease toward the center.
+
+For individual small cells, intracellular gradients are often less important than for large pellets, although the actual importance depends on uptake kinetics and diffusivity.
+
+## 6. Region 8 — Intracellular oxygen consumption
+
+The oxygen that reaches the intracellular reaction sites is consumed by metabolic reactions.
+
+Lecture 10 expresses oxygen uptake in terms of biomass concentration.
+
+$$
+\boxed{OUR=q_{O_2}X}
+$$
+
+For growth-associated oxygen consumption:
+
+$$
+\boxed{OUR=\frac{\mu_gX}{Y_{X/O_2}}}
+$$
+
+These expressions describe oxygen demand rather than oxygen transfer from bubbles.
+
+This is the distinction between OTR and OUR:
+
+$$
+\underbrace{OTR}_{\text{oxygen supplied}} \qquad\text{versus}\qquad \underbrace{OUR}_{\text{oxygen consumed}}
+$$
+
+At quasi-steady dissolved oxygen:
+
+$$
+\boxed{OTR=OUR}
+$$
+
+But this equality alone does not identify which transport resistance is controlling.
+
+## 7. Connecting the complete pathway
+
+Oxygen inside gas bubble
+
+$P_{O_2}$
+
+Region 3 — Gas–liquid mass transfer
+
+$OTR\approx k_La(C^*-C_L)$
+
+Region 4 — Bulk dissolved oxygen
+
+$C_L$
+
+Region 5 — Cell-surface transport
+
+$N_{O_2,\mathrm{cell}}=k_{L,\mathrm{cell}}(C_L-C_s)$
+
+Region 7 — Intracellular diffusion
+
+$\mathbf J_{O_2}=-D_{\mathrm{eff}}\nabla C$
+
+Region 8 — Cellular oxygen consumption
+
+$OUR=q_{O_2}X$
+
+## 8. Why different organisms have different controlling resistances
+
+<img width="1001" height="630" alt="Screenshot 2026-11-06 at 11 32 21 PM" src="https://github.com/user-attachments/assets/79038e3a-17b7-4425-9e1c-349610099c68" />
+<img width="1022" height="630" alt="Screenshot 2026-11-06 at 11 32 01 PM" src="https://github.com/user-attachments/assets/d3a67287-5e7a-496f-9a29-0666914dba7b" />
+ 3 compares the likely rate limitations across microbial systems.
+
+| System                           | Likely important limitation                      | Engineering implication                             |
+| -------------------------------- | ------------------------------------------------ | --------------------------------------------------- |
+| Individual bacteria (1–2 µm)     | Region 3: bubble-side liquid film                | Improve gas dispersion and $k_La$               |
+| Yeast (5–8 µm)                   | Often region 3                                   | Improve oxygen delivery                             |
+| Large microbial pellets or flocs | Region 5 and possibly internal diffusion         | Improve external transport and consider pellet size |
+| Dense microbial aggregates       | Region 7: internal diffusion                     | Evaluate internal oxygen gradients                  |
+| Oxygen-limited metabolism        | Region 8: reaction kinetics may influence uptake | Evaluate oxygen consumption kinetics                |
+
+These are the qualitative tendencies given by the lecture, not universal rankings of resistance.
+
 
 
 ## Gas–Liquid Mass Transfer in a Bioreactor — Question 5

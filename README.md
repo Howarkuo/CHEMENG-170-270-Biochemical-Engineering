@@ -1,4 +1,9 @@
 # CHEMENG-170-270-Biochemical-Engineering
+## Lec9. Mass Balances for Two-Phase Bioreactors
+- Resistance gas mass transfer, well mixed liquid, well-mixed gas / plug flow gas
+## Lec10. Gas-Liquid Mass Transfer and kLa
+- Experimental determination of kLa
+
 
 ## Gas–Liquid Mass Transfer in a Bioreactor — Question 5
 <img width="675" height="405" alt="Screenshot 2026-11-05 at 12 21 35 AM" src="https://github.com/user-attachments/assets/a08901e5-ed81-408a-be55-cfa3d753ac3d" />

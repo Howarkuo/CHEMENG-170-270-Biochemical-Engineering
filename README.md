@@ -29,6 +29,7 @@ $$
 
 ## 1.  CFD applications to bioreactor processes
 
+<img width="1035" height="602" alt="Screenshot 2026-11-06 at 11 32 45 PM" src="https://github.com/user-attachments/assets/07290b1d-1077-4788-b3d4-90db6136c850" />
 
 Compares liquid-phase velocity distributions in 40, 60, and 90 m³ bioreactors.
 
@@ -106,8 +107,12 @@ CFD helps identify whether parts of the vessel may have insufficient mixing or o
 ## 2. s 2–3 — Oxygen transport from bubbles to intracellular reaction sites
 
 The lecture diagrams trace oxygen transport through nine numbered regions (0–8).
+<img width="963" height="597" alt="Screenshot 2026-11-06 at 11 33 37 PM" src="https://github.com/user-attachments/assets/198d01f7-8d04-4626-a37e-dbd95c5f2a76" />
+
 
 ### A. Classify the resistances
+<img width="738" height="371" alt="Screenshot 2026-11-06 at 11 34 06 PM" src="https://github.com/user-attachments/assets/7d29896f-dbbd-4516-8a20-a6c0a1c5dd37" />
+
 
 | Region | Physical location                | Resistance indicated on      |
 | ------ | -------------------------------- | --------------------------------- |
@@ -125,7 +130,7 @@ The s particularly emphasize regions 3, 5, and 7, plus the oxygen-consuming reac
 
 ## 3. Region 3 — Gas–liquid film resistance
 
-This is the resistance already described by the two-film model.
+This is the resistance  described by the two-film model.
 
 Gas-film flux:
 
@@ -199,7 +204,7 @@ where $\delta$ is an effective diffusion-film thickness.
 
 Effect on $a$: Bubble breakup and gas dispersion change the total interfacial area.
 
-For approximately spherical bubbles of uniform diameter:
+For approximately spherical <img width="952" height="581" alt="Screenshot 2026-11-06 at 11 33 25 PM" src="https://github.com/user-attachments/assets/9bccdaf3-82ae-4683-8337-c81beaddb4a4" />s of uniform diameter:
 
 $$
 \boxed{a=\frac{6\varepsilon_g}{d_b(1-\varepsilon_g)}}

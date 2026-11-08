@@ -88,8 +88,8 @@ This equation connects fluid motion to oxygen distribution.
 
 - $\mathbf{u}\cdot\nabla C$: oxygen transported by bulk liquid movement (advection).
 - $\nabla\cdot(D_{\mathrm{eff}}\nabla C)$: oxygen redistributed by molecular and modeled turbulent diffusion.
-- $OTR$: oxygen entering the liquid from gas bubbles.
-- $OUR$: oxygen consumed by microorganisms.
+- $OTR$: Oxygen Transfer Rate, oxygen entering the liquid from gas bubbles, molar per unit liquid volume per second .
+- $OUR$: Oxygen usage Rate, oxygen consumed by microorganisms,molar per unit liquid volume per second.
 
 This is a more spatially resolved form of the familiar well-mixed oxygen balance:
 
@@ -141,6 +141,7 @@ The s particularly emphasize regions 3, 5, and 7, plus the oxygen-consuming reac
 
 This is the resistance  described by the two-film model. ($$P_i$$, $$C_i$$:at the gas-liquid interface / in the bulk gas phase)
 ($$N_{O_2} $$:Molar flux of oxygen (rate of mass transfer per unit area))
+($H$: Henry's law constant ($H = P_i / C_i$))
 
 Gas-film flux:
 
@@ -154,16 +155,69 @@ $$
 N_{O_2}=k_L(C_i-C_L)
 $$
 
-Interfacial equilibrium:
+Equilibrium at the interface (Henry's Law):
 
 $$
 P_i=HC_i
 $$
 
-Combining the two resistances:
+### Step 1 — Express the interfacial values in terms of flux
+
+Rearrange the gas-film and liquid-film flux equations. Here $C_L$ is the bulk-liquid oxygen concentration.
 
 $$
-\boxed{ \frac{1}{K_ga} = \frac{1}{k_ga} + \frac{H}{k_La} }
+P_i=P_g-\frac{N_{O_2}}{k_g},
+\qquad
+C_i=C_L+\frac{N_{O_2}}{k_L}
+$$
+
+### Step 2 — Substitute into Henry's law
+
+Insert the expressions for $P_i$ and $C_i$ into $P_i=HC_i$.
+
+$$
+P_g-\frac{N_{O_2}}{k_g}
+=H\left(C_L+\frac{N_{O_2}}{k_L}\right)
+$$
+
+### Step 3 — Collect the flux terms
+
+Expand the right-hand side.
+
+$$
+P_g-\frac{N_{O_2}}{k_g}
+=HC_L+\frac{H N_{O_2}}{k_L}
+$$
+
+Move $HC_L$ to the left and factor the flux on the right.
+
+$$
+P_g-HC_L
+=\frac{N_{O_2}}{k_g}+\frac{H N_{O_2}}{k_L}
+=N_{O_2}\left(\frac{1}{k_g}+\frac{H}{k_L}\right)
+$$
+
+### Step 4 — Solve for the oxygen flux
+
+$$
+N_{O_2}
+=\frac{P_g-HC_L}{\dfrac{1}{k_g}+\dfrac{H}{k_L}}
+$$
+
+### Step 5 — Define the overall gas-side coefficient
+
+The gas-side coefficient $K_g$ combines the gas-film resistance and the liquid-film resistance expressed on a gas-pressure basis.
+
+$$
+\frac{1}{K_g}=\frac{1}{k_g}+\frac{H}{k_L},
+\qquad
+N_{O_2}=K_g(P_g-HC_L)
+$$
+
+Multiplying the flux by the interfacial area per unit liquid volume $a$ gives $OTR=aN_{O_2}$. Dividing the resistance equation by $a$ gives the volumetric form.
+
+$$
+\boxed{\frac{1}{K_ga}=\frac{1}{k_ga}+\frac{H}{k_La}}
 $$
 
 The lecture assumes negligible gas-film resistance for oxygen.

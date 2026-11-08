@@ -8,7 +8,7 @@
 ## Lec9. Mass Balances for Two-Phase Bioreactors
 - Resistance gas mass transfer, well mixed liquid, well-mixed gas / plug flow gas
 - 9.1 CFD applications to bioreactor processes
-- 9.2  Oxygen transport from bubbles to intracellular reaction sites
+- 9.2  Oxygen transport from bubbles to intracellular reaction sites /  oxygen supply to fermentation or cell-culture bioreactors
 ## Lec10. Gas-Liquid Mass Transfer and kLa
 - Experimental determination of kLa
 - probe response time and gas-phase dynamics
@@ -31,7 +31,7 @@ $$
 \boxed{ \text{Fluid flow} \longrightarrow \text{Mass-transfer coefficients} \longrightarrow OTR \longrightarrow \text{Cellular oxygen availability} }
 $$
 
-## 1.  CFD applications to bioreactor processes
+## 9.1.  CFD applications to bioreactor processes
 
 <img width="1035" height="602" alt="Screenshot 2026-11-06 at 11 32 45 PM" src="https://github.com/user-attachments/assets/07290b1d-1077-4788-b3d4-90db6136c850" />
 
@@ -64,6 +64,10 @@ where $\mathbf{f}$ represents additional modeled forces, such as impeller or int
 | $P$          | Pressure                   | Pa    |
 | $\mu$        | Dynamic viscosity          | Pa·s  |
 | $\mathbf{g}$ | Gravitational acceleration | m/s²  |
+
+In solids and stationary fluids, mass transfer occurs mainly because of molecular diffusion. Most systems of bioprocessing interest, however, contain moving fluid, so both molecular diffusion and convective mass transfer are important considerations for bioreactor operation and scale-up.(Chaudhry, M. A. (2024, October 15).)
+
+
 
 
 ### B. How does velocity influence mass transfer?
@@ -108,7 +112,8 @@ Consequently, scaling up a bioreactor does not automatically preserve:
 
 CFD helps identify whether parts of the vessel may have insufficient mixing or oxygen supply.
 
-## 2. s 2–3 — Oxygen transport from bubbles to intracellular reaction sites
+## 9.2.— Oxygen transport from bubbles to intracellular reaction sites /  oxygen supply to fermentation or cell-culture bioreactors
+During cultivation, O2 transfers from sparged air (gas phase) through the gas–liquid interface to the bulk liquid medium. There, culturing cells consume the oxygen and produce CO2 through cellular respiration. Once excreted into the liquid medium, that CO2 passes through the gas–liquid interface and diffuses into the gas phase to be carried out of the bioreactor. Transfer of O2 or CO2 molecules from one phase to another occurs only when those phases have different concentrations. If, for example, O2 concentration is in equilibrium between two phases — e.g., when liquid medium is saturated with oxygen — then there will be no net O2 transfer in either direction. And if O2 mass transfer from gas bubbles is slow, the rate of cellular metabolism will depend on the rate of oxygen supply from the gas phase. Because O2 is a critical component of aerobic metabolism and is sparingly soluble in aqueous solutions, considerable research has gone into understanding its mass-transfer mechanisms — and into ways to improve the oxygen supply across the gas–liquid interface, especially in complex systems such as bioreactors. (Chaudhry, M. A. (2024, October 15).)
 
 The lecture diagrams trace oxygen transport through nine numbered regions (0–8).
 <img width="963" height="597" alt="Screenshot 2026-11-06 at 11 33 37 PM" src="https://github.com/user-attachments/assets/198d01f7-8d04-4626-a37e-dbd95c5f2a76" />
@@ -356,6 +361,121 @@ $OUR=q_{O_2}X$
 | Oxygen-limited metabolism        | Region 8: reaction kinetics may influence uptake | Evaluate oxygen consumption kinetics                |
 
 These are the qualitative tendencies given by the lecture, not universal rankings of resistance.
+# Lecture 10 — Measuring oxygen transfer and uptake
+
+The methods below extend the well-mixed liquid balance from Lecture 9. Here $C$ denotes bulk dissolved oxygen (DO), $C^*$ is the liquid concentration in equilibrium with the bulk gas, and $V_L$ is liquid volume. OTR and OUR are volumetric rates, for example in mmol/(L·h).
+
+## 1. Oxygen saturation and driving force
+
+For air at 1 atm and 37 °C, the dry-air oxygen partial pressure is about 0.21 atm (160 mm Hg). The reference air-saturated DO in water is approximately 0.21 mmol/L (6.8 mg/L). Actual saturation depends on gas composition, pressure, temperature, and medium composition. With air saturation as the calibration reference, $\%\mathrm{DO}=100C/C^*_{\mathrm{air}}$. Oxygen enrichment raises $C^*$, and nitrogen sparging lowers it.
+
+$$
+C^*=\frac{P_{O_2}}{H},\qquad P^*_{O_2}=HC,\qquad
+P_{O_2}-P^*_{O_2}=H(C^*-C)
+$$
+
+At equilibrium, the driving force is zero. A negative $C^*-C$ causes oxygen stripping. Respiration-generated carbon dioxide can travel in the opposite direction, from broth to bubbles and out through the exhaust.
+
+## 2. Cell-free dynamic measurement of kLa
+
+1. Establish stable DO under air sparging at the selected agitation and airflow.
+2. Replace air with nitrogen to lower DO, then restore air at the original flow and record the recovery.
+3. Fit the recovery over a suitable range, such as 20–80% air saturation, using the stable final DO as $C^*$.
+
+With no cellular uptake and constant $C^*$ and $k_La$, integration gives
+
+$$
+\frac{dC}{dt}=k_La(C^*-C)
+\qquad\Longrightarrow\qquad
+\ln\!\left(\frac{C^*-C(t)}{C^*-C(t_0)}\right)
+=-k_La(t-t_0)
+$$
+
+The slope of the logarithmic plot is $-k_La$, and $1/(k_La)$ is the characteristic oxygen-transfer time.
+
+| Assumption | Practical check |
+| --- | --- |
+| The liquid is well mixed | Compare DO traces at different locations when gradients are plausible, especially in large or viscous systems. |
+| The DO probe is fast | Check that the probe time constant $\tau_p$ is much smaller than $1/(k_La)$. Probe lag can flatten the fitted response. |
+| The probe surface film contributes little resistance | Check probe response under the agitation and viscosity of the measurement. |
+| Gas composition and holdup settle quickly after the switch | Compare nitrogen stripping with an aeration interruption in a respiring culture under comparable conditions. Agreement supports treating gas transients as small. |
+
+Two other measurement approaches are the gas oxygen balance, which uses measured gas-phase depletion and the liquid driving force, and sulfite oxidation, which chemically consumes dissolved oxygen. Sulfite results characterize the test liquid and conditions, whose bubble behavior can differ from culture broth.
+
+## 3. Measuring OUR and specific oxygen uptake
+
+The batch liquid balance links the three measurement methods.
+
+$$
+\frac{dC}{dt}=k_La(C^*-C)-OUR,\qquad OUR=q_{O_2}X
+$$
+
+| Method | Measurements and calculation |
+| --- | --- |
+| Inlet–outlet gas balance | Use an oxygen analyzer and gas-flow measurements to determine OTR. Subtract liquid DO accumulation measured by the DO probe to obtain OUR. |
+| Dynamic test with live cells | Briefly interrupt aeration and estimate $OUR\approx-dC/dt$ after residual transfer becomes negligible. Restore the original aeration and use the recovery trace to determine $k_La$. Keep the test above oxygen-limiting DO so uptake stays approximately constant. |
+| DO profile with independently known OTR | Obtain the local DO slope and calculate $OUR=OTR-dC/dt$. If OTR is calculated from $k_La$, both $C^*$ and $C$ are also required. |
+
+With negligible gas-phase oxygen accumulation, the general gas balance is
+
+$$
+OTR=\frac{\dot n_{g,\mathrm{in}}y_{O_2,\mathrm{in}}-\dot n_{g,\mathrm{out}}y_{O_2,\mathrm{out}}}{V_L}
+$$
+
+The gas molar flow rates and oxygen fractions must use the same wet or dry basis. If inlet and outlet volumetric flows are equal at the same reference conditions, this reduces to $OTR=(Q_g/V_L)(C_{g,\mathrm{in}}-C_{g,\mathrm{out}})$. For a short interval, the average OUR is the average OTR minus $\Delta C/\Delta t$. An independently measured cell or biomass concentration gives $q_{O_2}=OUR/X$ on the corresponding basis.
+
+During recovery in the live-cell test, use the air-off estimate of OUR:
+
+$$
+k_La=\frac{dC/dt+OUR}{C^*-C}
+$$
+
+A fit across the recovery interval can reduce the sensitivity to noisy pointwise slopes.
+
+## 4. Aeration capacity and the cell-density limit
+
+At a quasi-steady DO setpoint $C_{\mathrm{set}}$ and approximately constant $q_{O_2}$, setting $OTR=OUR$ gives
+
+$$
+X_{\mathrm{supported}}
+=\frac{k_La(C^*-C_{\mathrm{set}})}{q_{O_2}}
+$$
+
+The theoretical zero-DO ceiling is $X_{\max}=k_La C^*/q_{O_2}$. A positive setpoint or minimum allowable DO gives an operating estimate. With $q_{O_2}$ in mmol/(cell·h) and OTR in mmol/(L·h), the result is in cells/L.
+
+The article reports typical $q_{O_2}$ ranges of $2$–$8\times10^{-10}$ mmol/(cell·h) for CHO cells and $2$–$4\times10^{-10}$ mmol/(cell·h) for hybridoma and myeloma cells. Even with comparatively low per-cell demand, high-density fed-batch and perfusion cultures can exhaust the limited DO inventory rapidly. Oxygen-enriched sparging increases the driving force, while agitation, gas flow, and sparger or impeller design can increase transfer capacity.
+
+### Circulation through a low-transfer zone
+
+A vessel-average DO reading can conceal oxygen-poor regions. Model a circulating liquid parcel as leaving an impeller zone at $C_0$ and spending $t_c$ in a low-transfer zone with a constant local coefficient $K=(k_La)_{\mathrm{low}}$. With constant local $C^*$ and $q_{O_2}X$, the parcel balance gives
+
+$$
+C(t)=C^*+(C_0-C^*)e^{-Kt}
+-\frac{q_{O_2}X}{K}(1-e^{-Kt})
+$$
+
+Taking $C_0\approx C^*$ and requiring $C(t_c)\ge C_{\mathrm{crit}}$ gives
+
+$$
+X\le X_{\mathrm{crit}}
+=\frac{K(C^*-C_{\mathrm{crit}})}
+{q_{O_2}(1-e^{-Kt_c})}
+$$
+
+In the limit of negligible local transfer, $X_{\mathrm{crit}}\to(C^*-C_{\mathrm{crit}})/(q_{O_2}t_c)$. Longer residence in the low-transfer zone gives cells more time to deplete oxygen before the next pass through the impeller zone.
+
+## 5. Scale-up, technology transfer, and culture monitoring
+
+- **Within an equipment platform.** Adjust gas flow, agitation, and hardware to reproduce oxygen transfer at the target culture conditions. Matching $k_La$ reproduces OTR only when the oxygen driving force also matches.
+- **Across equipment platforms.** Use measured $k_La$ or OTR to compare vessels with different geometry, power input per volume, superficial gas velocity, or gas flow per liquid volume (vvm).
+- **During a batch.** Cells, products, and metabolites can change viscosity and bubble coalescence. Changes in bubble size and holdup can shift $k_La$ over time, so a cell-free measurement is a baseline.
+- **During culture monitoring.** OUR often rises during exponential growth and falls as metabolism slows. The specific rate $q_{O_2}$ varies with cell line, growth phase, and culture conditions. DO can rise as demand falls if aeration and agitation stay fixed. OUR can support cell-line characterization, fed-batch feeding decisions, or viable-cell estimation where a suitable $q_{O_2}$ calibration exists.
+
+### Source
+
+[Chaudhry, *Lessons in Bioreactor Scale-Up, Part 3*, BioProcess International (2024)](https://www.bioprocessintl.com/bioreactors/lessons-in-bioreactor-scale-up-part-3-experimental-determination-and-application-of-oxygen-mass-transfer-rate-mass-transfer-coefficient-and-oxygen-uptake-rate)
+
+The probe criterion and cell-density equations above follow from dimensional consistency and the oxygen balance. The pasted source renders the probe criterion with units of inverse time on the right and the cell-density expression with multiplication by $q_{O_2}$.
 
 
 

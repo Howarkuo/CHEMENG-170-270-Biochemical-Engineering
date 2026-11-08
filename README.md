@@ -452,7 +452,7 @@ The article reports typical $q_{O_2}$ ranges of $2$–$8\times10^{-10}$ mmol/(ce
 A vessel-average DO reading can conceal oxygen-poor regions. Model a circulating liquid parcel as leaving an impeller zone at $C_0$ and spending $t_c$ in a low-transfer zone with a constant local coefficient $K=(k_La)_{\mathrm{low}}$. With constant local $C^*$ and $q_{O_2}X$, the parcel balance gives
 
 $$
-C(t)=C^*+(C_0-C^*)e^{-Kt}
+C(t)=C^ast+(C_0-C^ast)e^{-Kt}
 -\frac{q_{O_2}X}{K}(1-e^{-Kt})
 $$
 

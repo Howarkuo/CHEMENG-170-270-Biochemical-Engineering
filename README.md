@@ -239,6 +239,7 @@ where:
 $$
 C^*=\frac{P_{O_2}}H
 $$
+<img width="747" height="815" alt="Screenshot 2026-11-07 at 5 26 03 PM" src="https://github.com/user-attachments/assets/6a359048-d79a-474f-a86f-4c68eabe4466" />
 
 ### How does CFD connect to $k_La$?
 
@@ -268,7 +269,7 @@ where $\delta$ is an effective diffusion-film thickness.
 
 Effect on $a$: Bubble breakup and gas dispersion change the total interfacial area.
 
-For approximately spherical <img width="952" height="581" alt="Screenshot 2026-11-06 at 11 33 25 PM" src="https://github.com/user-attachments/assets/9bccdaf3-82ae-4683-8337-c81beaddb4a4" />s of uniform diameter:
+For approximately spherical of uniform diameter:
 
 $$
 \boxed{a=\frac{6\varepsilon_g}{d_b(1-\varepsilon_g)}}

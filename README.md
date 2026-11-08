@@ -241,6 +241,16 @@ C^*=\frac{P_{O_2}}H
 $$
 <img width="747" height="815" alt="Screenshot 2026-11-07 at 5 26 03 PM" src="https://github.com/user-attachments/assets/6a359048-d79a-474f-a86f-4c68eabe4466" />
 
+
+<img width="1089" height="711" alt="Screenshot 2026-11-07 at 5 39 47 PM" src="https://github.com/user-attachments/assets/0586afaa-bcf3-428e-8610-aa701b4dc4c7" />
+<img width="1095" height="689" alt="Screenshot 2026-11-07 at 5 39 58 PM" src="https://github.com/user-attachments/assets/9b6d7b97-6fbb-44a8-8ff2-44418a5c299f" />
+<img width="1107" height="695" alt="Screenshot 2026-11-07 at 5 40 59 PM" src="https://github.com/user-attachments/assets/fd86995b-29ad-45a9-bcde-46d1b8bf9c73" />
+<img width="1091" height="698" alt="Screenshot 2026-11-07 at 5 41 08 PM" src="https://github.com/user-attachments/assets/4e4a92a6-cd54-4827-9ad7-7980f7969562" />
+<img width="1098" height="474" alt="Screenshot 2026-11-07 at 5 41 30 PM" src="https://github.com/user-attachments/assets/e8160665-65a3-43aa-8da4-4d066c95806e" />
+<img width="1065" height="600" alt="Screenshot 2026-11-07 at 5 41 57 PM" src="https://github.com/user-attachments/assets/afaefaab-8eef-4f4b-9d9d-8df4c25d8d83" />
+
+
+
 ### How does CFD connect to $k_La$?
 
 Recall:

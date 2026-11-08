@@ -7,9 +7,8 @@
 
 ## Lec9. Mass Balances for Two-Phase Bioreactors
 - Resistance gas mass transfer, well mixed liquid, well-mixed gas / plug flow gas
-### 9.1 CFD applications to bioreactor processes
-
-### 9.2  Oxygen transport from bubbles to intracellular reaction sites
+- 9.1 CFD applications to bioreactor processes
+- 9.2  Oxygen transport from bubbles to intracellular reaction sites
 ## Lec10. Gas-Liquid Mass Transfer and kLa
 - Experimental determination of kLa
 - probe response time and gas-phase dynamics
@@ -345,8 +344,7 @@ $OUR=q_{O_2}X$
 
 ## 8. Why different organisms have different controlling resistances
 
-<img width="1001" height="630" alt="Screenshot 2026-11-06 at 11 32 21 PM" src="https://github.com/user-attachments/assets/79038e3a-17b7-4425-9e1c-349610099c68" />
-<img width="1022" height="630" alt="Screenshot 2026-11-06 at 11 32 01 PM" src="https://github.com/user-attachments/assets/d3a67287-5e7a-496f-9a29-0666914dba7b" />
+
  3 compares the likely rate limitations across microbial systems.
 
 | System                           | Likely important limitation                      | Engineering implication                             |

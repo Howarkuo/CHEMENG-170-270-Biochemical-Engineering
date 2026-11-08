@@ -139,7 +139,8 @@ The s particularly emphasize regions 3, 5, and 7, plus the oxygen-consuming reac
 
 ## 3. Region 3 — Gas–liquid film resistance
 
-This is the resistance  described by the two-film model. ($$P_i$$, $$C_i$$:at the gas-liquid interface / in the bulk gas phase, $$N_{O_2}$$Molar flux of oxygen (rate of mass transfer per unit area))
+This is the resistance  described by the two-film model. ($$P_i$$, $$C_i$$:at the gas-liquid interface / in the bulk gas phase)
+($$N_{O_2} $$:Molar flux of oxygen (rate of mass transfer per unit area))
 
 Gas-film flux:
 

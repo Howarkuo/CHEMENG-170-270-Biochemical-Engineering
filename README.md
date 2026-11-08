@@ -370,8 +370,10 @@ The methods below extend the well-mixed liquid balance from Lecture 9. Here $C$ 
 For air at 1 atm and 37 °C, the dry-air oxygen partial pressure is about 0.21 atm (160 mm Hg). The reference air-saturated DO in water is approximately 0.21 mmol/L (6.8 mg/L). Actual saturation depends on gas composition, pressure, temperature, and medium composition. With air saturation as the calibration reference, $\%\mathrm{DO}=100C/C^*_{\mathrm{air}}$. Oxygen enrichment raises $C^*$, and nitrogen sparging lowers it.
 
 $$
-C^*=\frac{P_{O_2}}{H},\qquad P^*_{O_2}=HC,\qquad
-P_{O_2}-P^*_{O_2}=H(C^*-C)
+\frac{dC}{dt}=k_La(C^{\ast}-C)
+\qquad\Longrightarrow\qquad
+\ln\!\left(\frac{C^{\ast}-C(t)}{C^{\ast}-C(t_0)}\right)
+=-k_La(t-t_0)
 $$
 
 At equilibrium, the driving force is zero. A negative $C^*-C$ causes oxygen stripping. Respiration-generated carbon dioxide can travel in the opposite direction, from broth to bubbles and out through the exhaust.
@@ -385,9 +387,9 @@ At equilibrium, the driving force is zero. A negative $C^*-C$ causes oxygen stri
 With no cellular uptake and constant $C^*$ and $k_La$, integration gives
 
 $$
-\frac{dC}{dt}=k_La(C^*-C)
+\frac{dC}{dt}=k_La(C^ast-C)
 \qquad\Longrightarrow\qquad
-\ln\!\left(\frac{C^*-C(t)}{C^*-C(t_0)}\right)
+\ln\!\left(\frac{C^ast-C(t)}{C^ast-C(t_0)}\right)
 =-k_La(t-t_0)
 $$
 
@@ -407,7 +409,7 @@ Two other measurement approaches are the gas oxygen balance, which uses measured
 The batch liquid balance links the three measurement methods.
 
 $$
-\frac{dC}{dt}=k_La(C^*-C)-OUR,\qquad OUR=q_{O_2}X
+\frac{dC}{dt}=k_La(C^ast-C)-OUR,\qquad OUR=q_{O_2}X
 $$
 
 | Method | Measurements and calculation |
@@ -427,7 +429,7 @@ The gas molar flow rates and oxygen fractions must use the same wet or dry basis
 During recovery in the live-cell test, use the air-off estimate of OUR:
 
 $$
-k_La=\frac{dC/dt+OUR}{C^*-C}
+k_La=\frac{dC/dt+OUR}{C^ast-C}
 $$
 
 A fit across the recovery interval can reduce the sensitivity to noisy pointwise slopes.
@@ -438,10 +440,10 @@ At a quasi-steady DO setpoint $C_{\mathrm{set}}$ and approximately constant $q_{
 
 $$
 X_{\mathrm{supported}}
-=\frac{k_La(C^*-C_{\mathrm{set}})}{q_{O_2}}
+=\frac{k_La(C^ast-C_{\mathrm{set}})}{q_{O_2}}
 $$
 
-The theoretical zero-DO ceiling is $X_{\max}=k_La C^*/q_{O_2}$. A positive setpoint or minimum allowable DO gives an operating estimate. With $q_{O_2}$ in mmol/(cell·h) and OTR in mmol/(L·h), the result is in cells/L.
+The theoretical zero-DO ceiling is $X_{\max}=k_La C^ast/q_{O_2}$. A positive setpoint or minimum allowable DO gives an operating estimate. With $q_{O_2}$ in mmol/(cell·h) and OTR in mmol/(L·h), the result is in cells/L.
 
 The article reports typical $q_{O_2}$ ranges of $2$–$8\times10^{-10}$ mmol/(cell·h) for CHO cells and $2$–$4\times10^{-10}$ mmol/(cell·h) for hybridoma and myeloma cells. Even with comparatively low per-cell demand, high-density fed-batch and perfusion cultures can exhaust the limited DO inventory rapidly. Oxygen-enriched sparging increases the driving force, while agitation, gas flow, and sparger or impeller design can increase transfer capacity.
 

@@ -273,6 +273,14 @@ $$
 OTR=aJ=K_La(C^{\ast}-C_L)\approx k_La(C^{\ast}-C_L).
 $$
 
+## Flux vs Mass Transfer 
+| **Feature** | **Gas Interfacial Flux** | **Overall Volumetric Mass Transfer** |
+| --- | --- | --- |
+| **Definition** | Amount of species A crossing the interface per unit area per unit time, in mol/(m²·s). | Amount of species A transferred across the interface per unit liquid volume per unit time, in mol/(m³·s). |
+| **Spatial Scope** | Evaluated at the gas–liquid interface. In the steady two-film model, the same flux passes through both films. | Accounts for both film resistances between the bulk gas and bulk liquid and scales the flux by the interfacial area per unit liquid volume, $a$. |
+| **Key Equation** | $J_A=-D_{AB}\frac{dC_A}{dy}$ for diffusion in a film, or $J_A=k_g(P_{A,g}-P_{A,i})$ on a gas-film basis. | $r_A=aJ_A=K_La(C_A^{\ast}-C_{A,L})$. Under liquid-film control, $K_La\approx k_La$. |
+| **Driving Force** | Local concentration gradient in the film, or the partial-pressure difference $P_{A,g}-P_{A,i}$ across the gas film. | $C_A^{\ast}-C_{A,L}$, the difference between the liquid concentration in equilibrium with the bulk gas and the actual bulk-liquid concentration. |
+
 ## Overall resistance of Gas Mass Transfer(R), Gas interfacial Flux(J):  follows an analogue of Ohm's Law-- Inverse proportional! 
 <img width="747" height="815" alt="Screenshot 2026-11-07 at 5 26 03 PM" src="https://github.com/user-attachments/assets/6a359048-d79a-474f-a86f-4c68eabe4466" />
 

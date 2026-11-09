@@ -240,6 +240,39 @@ $$
 C^*=\frac{P_{O_2}}H
 $$
 
+### Flux and resistance on a liquid-concentration basis
+
+The two films act like resistors in series. The same interfacial flux passes through both films, and the driving force equals the flux times the total resistance. For oxygen, let $J=N_{O_2}$ in mol/(m²·s). With the Henry's law convention $P=HC$, the equilibrium liquid concentration corresponding to the **bulk gas** is $C^{\ast}=P_g/H$. The actual interfacial liquid concentration is $C_i=P_i/H$.
+
+Since $P_g-HC_L=H(C^{\ast}-C_L)$, the overall liquid-side coefficient is $K_L=HK_g$. The flux–resistance relation is
+
+$$
+J=K_L(C^{\ast}-C_L)
+=\frac{C^{\ast}-C_L}{R_{\mathrm{total}}},
+\qquad
+R_{\mathrm{total}}=\frac{1}{K_L}
+=\underbrace{\frac{1}{Hk_g}}_{R_G}
++\underbrace{\frac{1}{k_L}}_{R_L}.
+$$
+
+Here $K_L$ is in m/s, and both resistances are in s/m because they are expressed on the same liquid-concentration basis.
+
+| Film | Location | Factors that affect resistance |
+| --- | --- | --- |
+| Gas film, $R_G=1/(Hk_g)$ | Gas side of the bubble interface | Gas diffusivity and circulation within the bubble |
+| Liquid film, $R_L=1/k_L$ | Liquid immediately outside the bubble | Liquid diffusivity, viscosity, and turbulence near the interface |
+
+### Which film controls the flux?
+
+- **Liquid-film control** occurs when $Hk_g\gg k_L$. Then $R_G\ll R_L$ and $K_L\approx k_L$. With $H=P/C$, lower solubility corresponds to a larger $H$, which favors liquid-film control. The lecture uses this approximation for oxygen. Methane can also fall in this regime, depending on the film coefficients.
+- **Gas-film control** occurs when $Hk_g\ll k_L$. Then $R_G\gg R_L$ and $K_L\approx Hk_g$. High solubility can favor this regime, for example during ammonia absorption. For volatile organic compounds, compare the actual resistances for the compound and operating conditions.
+
+Under liquid-film control, $1/(K_ga)\approx H/(k_La)$. The volumetric oxygen transfer rate is
+
+$$
+OTR=aJ=K_La(C^{\ast}-C_L)\approx k_La(C^{\ast}-C_L).
+$$
+
 ## Overall resistance of Gas Mass Transfer(R), Gas interfacial Flux(J):  follows an analogue of Ohm's Law-- Inverse proportional! 
 <img width="747" height="815" alt="Screenshot 2026-11-07 at 5 26 03 PM" src="https://github.com/user-attachments/assets/6a359048-d79a-474f-a86f-4c68eabe4466" />
 

@@ -231,13 +231,13 @@ $$
 and:
 
 $$
-\boxed{OTR\approx k_La(C^*-C_L)}
+\boxed{OTR\approx k_La(C^ast-C_L)}
 $$
 
 where:
 
 $$
-C^*=\frac{P_{O_2}}H
+C^ast=\frac{P_{O_2}}H
 $$
 
 ### Flux and resistance on a liquid-concentration basis
@@ -479,11 +479,11 @@ The methods below extend the well-mixed liquid balance from Lecture 9. Here $C$ 
 For air at 1 atm and 37 °C, the dry-air oxygen partial pressure is about 0.21 atm (160 mm Hg). The reference air-saturated DO in water is approximately 0.21 mmol/L (6.8 mg/L). Actual saturation depends on gas composition, pressure, temperature, and medium composition. With air saturation as the calibration reference, $\%\mathrm{DO}=100C/C^*_{\mathrm{air}}$. Oxygen enrichment raises $C^*$, and nitrogen sparging lowers it.
 
 $$
-C^*=\frac{P_{O_2}}{H},\qquad P^*_{O_2}=HC,\qquad
-P_{O_2}-P^*_{O_2}=H(C^*-C)
+C^ast=\frac{P_{O_2}}{H},\qquad P^ast_{O_2}=HC,\qquad
+P_{O_2}-P^ast_{O_2}=H(C^ast-C)
 $$
 
-At equilibrium, the driving force is zero. A negative $C^*-C$ causes oxygen stripping. Respiration-generated carbon dioxide can travel in the opposite direction, from broth to bubbles and out through the exhaust.
+At equilibrium, the driving force is zero. A negative $C^ast-C$ causes oxygen stripping. Respiration-generated carbon dioxide can travel in the opposite direction, from broth to bubbles and out through the exhaust.
 
 ## 2. Cell-free dynamic measurement of kLa
 
@@ -491,12 +491,12 @@ At equilibrium, the driving force is zero. A negative $C^*-C$ causes oxygen stri
 2. Replace air with nitrogen to lower DO, then restore air at the original flow and record the recovery.
 3. Fit the recovery over a suitable range, such as 20–80% air saturation, using the stable final DO as $C^*$.
 
-With no cellular uptake and constant $C^*$ and $k_La$, integration gives
+With no cellular uptake and constant $C^ast$ and $k_La$, integration gives
 
 $$
-\frac{dC}{dt}=k_La(C^*-C)
+\frac{dC}{dt}=k_La(C^ast-C)
 \qquad\Longrightarrow\qquad
-\ln\!\left(\frac{C^*-C(t)}{C^*-C(t_0)}\right)
+\ln\!\left(\frac{C^ast-C(t)}{C^ast-C(t_0)}\right)
 =-k_La(t-t_0)
 $$
 
@@ -516,14 +516,14 @@ Two other measurement approaches are the gas oxygen balance, which uses measured
 The batch liquid balance links the three measurement methods.
 
 $$
-\frac{dC}{dt}=k_La(C^*-C)-OUR,\qquad OUR=q_{O_2}X
+\frac{dC}{dt}=k_La(C^ast-C)-OUR,\qquad OUR=q_{O_2}X
 $$
 
 | Method | Measurements and calculation |
 | --- | --- |
 | Inlet–outlet gas balance | Use an oxygen analyzer and gas-flow measurements to determine OTR. Subtract liquid DO accumulation measured by the DO probe to obtain OUR. |
 | Dynamic test with live cells | Briefly interrupt aeration and estimate $OUR\approx-dC/dt$ after residual transfer becomes negligible. Restore the original aeration and use the recovery trace to determine $k_La$. Keep the test above oxygen-limiting DO so uptake stays approximately constant. |
-| DO profile with independently known OTR | Obtain the local DO slope and calculate $OUR=OTR-dC/dt$. If OTR is calculated from $k_La$, both $C^*$ and $C$ are also required. |
+| DO profile with independently known OTR | Obtain the local DO slope and calculate $OUR=OTR-dC/dt$. If OTR is calculated from $k_La$, both $C^ast$ and $C$ are also required. |
 
 With negligible gas-phase oxygen accumulation, the general gas balance is
 
@@ -536,7 +536,7 @@ The gas molar flow rates and oxygen fractions must use the same wet or dry basis
 During recovery in the live-cell test, use the air-off estimate of OUR:
 
 $$
-k_La=\frac{dC/dt+OUR}{C^*-C}
+k_La=\frac{dC/dt+OUR}{C^ast-C}
 $$
 
 A fit across the recovery interval can reduce the sensitivity to noisy pointwise slopes.
@@ -547,31 +547,31 @@ At a quasi-steady DO setpoint $C_{\mathrm{set}}$ and approximately constant $q_{
 
 $$
 X_{\mathrm{supported}}
-=\frac{k_La(C^*-C_{\mathrm{set}})}{q_{O_2}}
+=\frac{k_La(C^ast-C_{\mathrm{set}})}{q_{O_2}}
 $$
 
-The theoretical zero-DO ceiling is $X_{\max}=k_La C^*/q_{O_2}$. A positive setpoint or minimum allowable DO gives an operating estimate. With $q_{O_2}$ in mmol/(cell·h) and OTR in mmol/(L·h), the result is in cells/L.
+The theoretical zero-DO ceiling is $X_{\max}=k_La C^ast/q_{O_2}$. A positive setpoint or minimum allowable DO gives an operating estimate. With $q_{O_2}$ in mmol/(cell·h) and OTR in mmol/(L·h), the result is in cells/L.
 
 The article reports typical $q_{O_2}$ ranges of $2$–$8\times10^{-10}$ mmol/(cell·h) for CHO cells and $2$–$4\times10^{-10}$ mmol/(cell·h) for hybridoma and myeloma cells. Even with comparatively low per-cell demand, high-density fed-batch and perfusion cultures can exhaust the limited DO inventory rapidly. Oxygen-enriched sparging increases the driving force, while agitation, gas flow, and sparger or impeller design can increase transfer capacity.
 
 ### Circulation through a low-transfer zone
 
-A vessel-average DO reading can conceal oxygen-poor regions. Model a circulating liquid parcel as leaving an impeller zone at $C_0$ and spending $t_c$ in a low-transfer zone with a constant local coefficient $K=(k_La)_{\mathrm{low}}$. With constant local $C^*$ and $q_{O_2}X$, the parcel balance gives
+A vessel-average DO reading can conceal oxygen-poor regions. Model a circulating liquid parcel as leaving an impeller zone at $C_0$ and spending $t_c$ in a low-transfer zone with a constant local coefficient $K=(k_La)_{\mathrm{low}}$. With constant local $C^ast$ and $q_{O_2}X$, the parcel balance gives
 
 $$
-C(t)=C^*+(C_0-C^*)e^{-Kt}
+C(t)=C^ast+(C_0-C^ast)e^{-Kt}
 -\frac{q_{O_2}X}{K}(1-e^{-Kt})
 $$
 
-Taking $C_0\approx C^*$ and requiring $C(t_c)\ge C_{\mathrm{crit}}$ gives
+Taking $C_0\approx C^ast$ and requiring $C(t_c)\ge C_{\mathrm{crit}}$ gives
 
 $$
 X\le X_{\mathrm{crit}}
-=\frac{K(C^*-C_{\mathrm{crit}})}
+=\frac{K(C^ast-C_{\mathrm{crit}})}
 {q_{O_2}(1-e^{-Kt_c})}
 $$
 
-In the limit of negligible local transfer, $X_{\mathrm{crit}}\to(C^*-C_{\mathrm{crit}})/(q_{O_2}t_c)$. Longer residence in the low-transfer zone gives cells more time to deplete oxygen before the next pass through the impeller zone.
+In the limit of negligible local transfer, $X_{\mathrm{crit}}\to(C^ast-C_{\mathrm{crit}})/(q_{O_2}t_c)$. Longer residence in the low-transfer zone gives cells more time to deplete oxygen before the next pass through the impeller zone.
 
 ## 5. Scale-up, technology transfer, and culture monitoring
 

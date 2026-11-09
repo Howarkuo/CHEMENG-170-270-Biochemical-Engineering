@@ -239,6 +239,8 @@ where:
 $$
 C^*=\frac{P_{O_2}}H
 $$
+
+## Overall resistance of Gas Mass Transfer(R), Gas interfacial Flux(J):  follows an analogue of Ohm's Law-- Inverse proportional! 
 <img width="747" height="815" alt="Screenshot 2026-11-07 at 5 26 03 PM" src="https://github.com/user-attachments/assets/6a359048-d79a-474f-a86f-4c68eabe4466" />
 
 
